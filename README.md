@@ -1,6 +1,6 @@
 # JsonWatch
 
-TODO: Write a gem description
+small utility to watch json changes
 
 ## Installation
 
