@@ -18,7 +18,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Simple Example
+
+save this to `simple_watch.rb`:
+
+	class SimpleWatch < JsonWatch
+	        watch :time, notify: :stdout do
+	                {'time' => Time.now}
+	        end
+	
+	        notify :stdout do |watch, diff|
+	                STDOUT.puts "#{watch[:name]}: #{diff.to_json}"
+	        end
+	end
+	
+	watch = SimpleWatch.new(cache: Redis.new, sleep: 1)
+	watch.start
+
+and execute:
+
+	~/dev/json_watch# ruby simple_watch.rb
+	time: {"append":{"time":"2014-07-27 13:36:42 +0900"}}
+	time: {"update":{"time":"2014-07-27 13:36:43 +0900"}}
+	time: {"update":{"time":"2014-07-27 13:36:44 +0900"}}
+	time: {"update":{"time":"2014-07-27 13:36:45 +0900"}}
+	time: {"update":{"time":"2014-07-27 13:36:46 +0900"}}
 
 ## Contributing
 
