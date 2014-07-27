@@ -44,6 +44,10 @@ and execute:
 	time: {"update":{"time":"2014-07-27 13:36:45 +0900"}}
 	time: {"update":{"time":"2014-07-27 13:36:46 +0900"}}
 
+## TODO
+
+* add `json-watch` command, which reads json config file and watches according to it
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/json_watch/fork )
